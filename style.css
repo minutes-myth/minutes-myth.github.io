@@ -1,0 +1,121 @@
+:root {
+  --lapis: #1F3157;
+  --marble: #EEF0F2;
+  --ink: #1A1D24;
+  --slate: #5B6475;
+  --gilt: #B8913A;
+  --gilt-dark: #8A6A22;
+  --display: "Marcellus", "Trajan Pro", Georgia, serif;
+  --body: "Literata", Georgia, "Times New Roman", serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--marble);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+a { color: var(--lapis); text-decoration-color: var(--gilt); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { color: var(--gilt-dark); }
+a:focus-visible { outline: 3px solid var(--gilt); outline-offset: 3px; border-radius: 2px; }
+
+h1, h2 { font-family: var(--display); font-weight: 400; line-height: 1.15; color: var(--lapis); }
+
+/* Home: the painting hangs on the left, the channel speaks on the right. */
+.home {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+}
+
+.wall {
+  margin: 0;
+  background: var(--lapis);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.5rem, 5vw, 4.5rem);
+}
+
+.wall img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 10px solid var(--gilt);
+}
+
+/* Museum wall label: real credit for the painting. */
+.label {
+  margin: 1.25rem 0 0;
+  max-width: 24rem;
+  background: var(--marble);
+  color: var(--ink);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+.label b { display: block; font-weight: 600; }
+.label span { color: var(--slate); }
+
+.words {
+  padding: clamp(2rem, 6vw, 5.5rem) clamp(1.25rem, 5vw, 4.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 38rem;
+}
+
+.words h1 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(3rem, 7vw, 5.25rem);
+  letter-spacing: 0.01em;
+}
+
+.lede { font-size: 1.3rem; line-height: 1.5; margin: 0 0 2rem; }
+
+.watch {
+  display: inline-block;
+  align-self: flex-start;
+  background: var(--lapis);
+  color: var(--marble);
+  text-decoration: none;
+  padding: 0.8rem 1.4rem;
+  font-family: var(--display);
+  font-size: 1.1rem;
+  border-bottom: 3px solid var(--gilt);
+}
+.watch:hover { background: var(--ink); color: var(--marble); }
+
+.words h2 { font-size: 1.5rem; margin: 3rem 0 0.5rem; }
+.words p { margin: 0 0 1rem; }
+
+.foot { margin-top: 2.5rem; font-size: 0.9rem; color: var(--slate); }
+.foot a { margin-right: 1.25rem; }
+
+/* Privacy policy: one quiet reading column. */
+.doc {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 4.5rem) 1.25rem 4rem;
+  line-height: 1.75;
+}
+.doc .back { font-size: 0.95rem; }
+.doc h1 { font-size: clamp(2.25rem, 6vw, 3.25rem); margin: 1.5rem 0 0.25rem; }
+.doc .date { color: var(--slate); margin: 0 0 2.5rem; }
+.doc h2 { font-size: 1.45rem; margin: 2.5rem 0 0.5rem; padding-top: 1.25rem; border-top: 2px solid var(--gilt); }
+.doc ul { padding-left: 1.25rem; }
+.doc li { margin-bottom: 0.4rem; }
+
+@media (max-width: 820px) {
+  .home { grid-template-columns: 1fr; min-height: 0; }
+  .wall { padding: 1.25rem 1rem 1.5rem; }
+  .wall img { border-width: 6px; }
+  .words { padding: 2.25rem 1rem 3rem; }
+}
